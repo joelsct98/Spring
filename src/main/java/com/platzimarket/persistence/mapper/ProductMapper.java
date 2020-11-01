@@ -1,6 +1,6 @@
 package com.platzimarket.persistence.mapper;
 
-import com.platzimarket.domiain.Product;
+import com.platzimarket.domain.Product;
 import com.platzimarket.persistence.entity.Producto;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -23,7 +23,7 @@ public interface ProductMapper {
             @Mapping(source = "categoria", target="category"),
     })
     Product toProduct(Producto producto);
-    List<Product> toProducts(List<Product> products);
+    List<Product> toProducts(List<Producto> products);
 
     @InheritInverseConfiguration
     @Mapping(target = "codigoBarras", ignore = true)
