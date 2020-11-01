@@ -1,9 +1,6 @@
 package com.platzimarket.persistence.entity;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -12,6 +9,19 @@ public class ComprasProducto {
 
     @EmbeddedId
     private ComprasProductoPK id;
+
+    private Integer cantidad;
+    private Double total;
+    private boolean estado;
+
+    @ManyToOne
+    @JoinColumn(name="id_compra", insertable = false, updatable = false)
+    private Compra compra;
+
+    @ManyToOne
+    @JoinColumn(name="id_producto", insertable = false, updatable = false)
+    private Producto producto;
+
 
     public ComprasProductoPK getId() {
         return id;
@@ -45,9 +55,7 @@ public class ComprasProducto {
         this.estado = estado;
     }
 
-    private Integer cantidad;
-    private Double total;
-    private boolean estado;
+
 
 
 
