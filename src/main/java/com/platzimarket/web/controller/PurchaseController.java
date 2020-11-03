@@ -32,5 +32,5 @@ public class PurchaseController {
     @PostMapping("/save")
     public ResponseEntity<Purchase> save(@RequestBody Purchase purchase) {
         return new ResponseEntity<>(purchaseService.save(purchase), HttpStatus.CREATED);
-    } 
+    }
 }
