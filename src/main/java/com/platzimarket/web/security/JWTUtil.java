@@ -13,7 +13,7 @@ import java.util.Date;
 //importante el component para la inyeccion del metodo
 @Component
 public class JWTUtil {
-    //en System currently indicamos el tiempo q queremos q la sesion qued abierta en este caso esta de 10H
+    //en System currently indicamos el tiempo q queremos q la sesion queda abierta en este caso esta de 10H
     private static final String KEY= "pla4tz1";
     public String generateToken(UserDetails userDetails){
         return Jwts.builder().setSubject(userDetails.getUsername())
