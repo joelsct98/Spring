@@ -10,7 +10,7 @@ public class HolaMundo {
 
     @GetMapping("/hola")
     public String saludar(){
-        return "si si a la chingada";
+        return "Hola a todos!";
     }
 
 }
